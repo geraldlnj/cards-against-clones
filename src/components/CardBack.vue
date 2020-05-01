@@ -1,8 +1,8 @@
 <template>
   <v-container class='pa-0'>
     <div class='cardContainer'>
-      <div v-bind:class="classObject">
-        <p class='text'>This is a test.</p>
+      <div :class="classObject">
+        <p class='text'>{{text}}</p>
       </div>
     </div>
   </v-container>
@@ -17,8 +17,13 @@ export default Vue.extend({
     type: {
       default: 'question',
       type: String,
+      required: true,
     },
-    text: String,
+    text: {
+      default: 'Placeholder Question',
+      type: String,
+      required: true,
+    },
   },
 
   data: () => ({
@@ -63,6 +68,14 @@ export default Vue.extend({
     padding-left:7%;
     padding-right:7%;
     word-wrap: break-word;
+
+    /* unhighlightable text */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
   }
   .rounded-card{
     border-radius:50px;

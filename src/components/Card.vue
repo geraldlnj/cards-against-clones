@@ -8,7 +8,7 @@
       <CardFace v-bind:type="type"/>
     </template>
     <template v-slot:back>
-      <CardBack v-bind:type="type"/>
+      <CardBack :type="type" :text="text"/>
     </template>
   </vue-flip>
 </template>
@@ -35,7 +35,11 @@ export default Vue.extend({
       type: String,
       required: true,
     },
-    text: String,
+    text: {
+      default: 'Placeholder Question',
+      type: String,
+      required: true,
+    },
   },
 
   data: () => ({
