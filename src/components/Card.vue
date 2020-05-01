@@ -1,6 +1,6 @@
 <template>
   <vue-flip
-    :active-click="true"
+    v-model="flipped"
     height="384px"
     width="240px"
   >
@@ -43,6 +43,7 @@ export default Vue.extend({
   },
 
   data: () => ({
+    flipped: false,
   }),
   computed: {
     classObject() {
